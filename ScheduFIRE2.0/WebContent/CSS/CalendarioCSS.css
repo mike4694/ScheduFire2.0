@@ -1,0 +1,298 @@
+/*contenitore per l'intero calendario*/
+body {
+	background-color: #f2f2f2;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+h2 {
+	color: #B60000;
+}
+
+#titolo {
+	position: absolute;
+	margin-left: 40%;
+}
+
+.back-up {
+	border: none;
+	background: none;
+	position: fixed;
+	bottom: 5%;
+	right: 5%;
+}
+
+p#turno {
+	font-size: 50%;
+	padding: 0;
+}
+
+.containerAll {
+	position: relative;
+	margin-top: 3px;
+	margin-right: 10px;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+}
+
+.edit {
+	justify-content: center;
+	margin: 4%;
+	background-color: transparent;
+	border: 1px solid #454d55;
+	color: #454d55;
+	padding: 7px;
+	border-radius: 7px;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#bottoneGeneraSquadra {
+	display: none;
+	line-height: normal;
+	position: fixed;
+	text-transform: uppercase;
+}
+
+#bottoneModificaSquadra {
+	display: none;
+}
+
+.edit:hover {
+	background-color: #454d55;
+	color: white;
+	text-decoration: none;
+	transition: color .6s ease-in-out, background-color .5s;
+}
+
+/*contenitore per il calendario*/
+.container-calendar {
+	width: 70%;
+	background-color: transparent;
+	font-family: Verdana;
+	border-right: 2px dotted black;
+}
+
+.container-calendar h1 h2 h3 {
+	color: white;
+	text-align: center;
+	font-family: Verdana;
+}
+
+.altroAnno {
+	background-color: transparent;
+	color: black;
+	font-size: 40%;
+	border: none;
+	cursor: pointer;
+}
+
+.container-year {
+	overflow: hidden;
+	color: #343a40;
+	font-family: Rod;
+	text-align: center;
+	font-size: 200%;
+}
+
+/*contenitore per la schedulazione
+flex:1 -> prende il resto del container*/
+.container-schedul {
+	flex: 1;
+	height: 600px;
+	overflow-y: scroll;
+	background-color: transparent;
+	font-family: Verdana;
+	margin: 1%;
+	padding-left: 1%;
+}
+
+#schedulazione {
+	display: none;
+}
+
+/*per la schedulazione delle squadre*/
+.wrapper {
+	align-items: center;
+	grid-template-columns: auto;
+	grid-template-rows: auto;
+	background-color: transparent;
+	color: #343a40;
+}
+
+.mansione {
+	box-shadow: 20%;
+	color: white;
+	border: 1px solid #454d55;
+	background-color: #343a40;
+	margin: 10px 0 10px 0;
+	font-size: 90%;
+	font-style: oblique;
+	font-weight: bold;
+	overflow: visible;
+	text-align: center;
+}
+
+.vigili {
+	font-style: italic;
+	color: black;
+	text-align: center;
+}
+
+#giornoCorrente {
+	font-weight: bold;
+	color: #b60000;
+}
+
+#giornoLavorativoDiurno {
+	background-color: #a0d6d6;
+	color: black;
+}
+
+#giornoLavorativoNotturno {
+	background-color: #57b7b7;
+	color: black;
+}
+
+#giornoCorrenteLavorativoDiurno {
+	font-weight: bold;
+	color: #b60000;
+	background-color: #a0d6d6;
+}
+
+#giornoCorrenteLavorativoNotturno {
+	font-weight: bold;
+	color: #b60000;
+	background-color: #57b7b7;
+}
+
+#giornoLavorativoDiurno:hover {
+	color: white;
+	font-style: italic;
+}
+
+#giornoLavorativoNotturno:hover {
+	color: white;
+	font-style: italic;
+}
+
+#giornoCorrenteLavorativoDiurno:hover {
+	color: white;
+	font-style: italic;
+}
+
+#giornoCorrenteLavorativoNotturno:hover {
+	color: white;
+	font-style: italic;
+}
+
+.grid-days {
+	display: grid;
+	grid-template-columns: auto auto auto auto auto auto auto;
+	color: white;
+	border-bottom: 3px solid #454d55;
+	padding: 2%;
+	background-color: #343a40;
+	justify-content: center;
+	font-family: Verdana;
+	cursor: default;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: auto auto auto auto auto auto auto;
+	background-color: transparent;
+	margin: 2%;
+	font-family: Verdana;
+	border: 2px solid black;
+}
+
+/*grid-item e item-empty sono uguali, solo che item-empty
+(->ovvero le parti del calendario che non hanno elementi)
+non ha la proprietà :hover*/
+.grid-item {
+	color: #434a52;
+	background-color: transparent;
+	border-bottom: 0.1px solid #343a40;
+	border-top: 0.1 px solid #343a40;
+	padding: 2%;
+	font-size: 200%;
+	text-align: center;
+	font-family: Verdana;
+	cursor: default;
+}
+
+.item-empty {
+	background-color: transparent;
+	border-bottom: 0.1px solid #808080;
+	border-top: 0.1 px solid #808080;
+	padding: 10%;
+	font-size: 200%;
+	text-align: center;
+	font-family: Verdana;
+	cursor: default;
+}
+
+/*menù DROPDOWN dei mesi*/
+.grid-chose-month {
+	display: grid;
+	justify-content: center;
+}
+
+.dropbtn {
+	background-color: transparent;
+	border-bottom: 2px solid #343a40 !important;
+	color: #343a40;
+	font-size: 150%;
+	border: none;
+	cursor: pointer;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+	background-color: transparent;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 16px;
+	width: 147px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown-item {
+	font-size: 80%;
+	font-weight: bold;
+	color: #4b4b4b;
+	padding: 10px 10px;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+}
+
+.dropdown-content a:hover {
+	background-color: #454d55;
+	color: white;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown:hover .dropbtn {
+	background-color: transparent;
+}
+/*Fine menù dropdown dei mesi*/
+.info {
+	text-decoration: none;
+	color: black;
+}
